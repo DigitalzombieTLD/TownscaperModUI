@@ -1,8 +1,11 @@
 Townscaper - ModUI Utility mod - v0.8.0 by Digitalzombie
 ===========================================================
 
+https://github.com/DigitalzombieTLD/TownscaperModUI/raw/master/ModUI.JPG
+
 How to install:
 ===============
+
 1. Download "Melon Loader" by LavaGang:
 https://github.com/LavaGang/MelonLoader/releases/latest/
 

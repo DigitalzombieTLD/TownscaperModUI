@@ -31,11 +31,11 @@ namespace ModUI
 			thisSection = section;
 
 			ManualAwake();
-
+			inputfieldImage.color = color;
 			textField.text = label;			
 		}
 
-		[HideFromIl2Cpp]
+		[method: HideFromIl2Cpp]
 		public void ManualAwake()
 		{
 			thisInputField = GetComponent<TMP_InputField>();
@@ -44,7 +44,7 @@ namespace ModUI
 			thisRect = GetComponent<RectTransform>();
 			thisInputField.contentType = thisContentType;
 
-		   Quaternion randomRotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-1.5f, 1.5f));
+		    Quaternion randomRotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-1.5f, 1.5f));
 			thisRect.rotation = randomRotation;
 
 			thisInputField.onEndEdit.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(thisAction));

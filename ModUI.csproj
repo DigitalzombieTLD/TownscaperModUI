@@ -149,6 +149,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="3rdParty\IL2CPP\LICENSE.md" />
+    <None Include="3rdParty\IniFileParser\LICENSE.md" />
     <None Include="3rdParty\IniFileParser\Model\IniData.cs.rej" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

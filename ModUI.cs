@@ -23,7 +23,7 @@ namespace ModUI
 			ClassInjector.RegisterTypeInIl2Cpp<DZToggle>();
 			ClassInjector.RegisterTypeInIl2Cpp<Keybind>();
 
-			moduiBundle = Il2CppAssetBundleManager.LoadFromFile("Mods\\modui");			
+			moduiBundle = Il2CppAssetBundleManager.LoadFromFile("Mods\\ModUI.unity3d");			
 		}
 
 		public override void OnSceneWasLoaded(int buildIndex, string sceneName)
@@ -33,11 +33,6 @@ namespace ModUI
 				TweenFactory.SceneManagerSceneLoaded();
 				UIManager.InitializeManager();
 			}
-		}
-		
-		public override void OnUpdate()
-		{
-			DZInput.GetInput();			
 		}
 	}
 }

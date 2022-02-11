@@ -38,7 +38,7 @@ namespace ModUI
 			thisSlider.wholeNumbers = wholeNumbers;
 		}
 
-		[HideFromIl2Cpp]
+		[method: HideFromIl2Cpp]
 		public void ManualAwake()
 		{
 			thisSlider = GetComponent<Slider>();

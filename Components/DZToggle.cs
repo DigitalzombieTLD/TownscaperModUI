@@ -29,11 +29,11 @@ namespace ModUI
 			thisSection = section;
 
 			ManualAwake();
-
+			toggleImage.color = color;
 			textField.text = label;			
 		}
 
-		[HideFromIl2Cpp]
+		[method: HideFromIl2Cpp]
 		public void ManualAwake()
 		{
 			thisToggle = GetComponent<Toggle>();

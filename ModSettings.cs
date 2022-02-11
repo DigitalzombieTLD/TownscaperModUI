@@ -222,6 +222,28 @@ namespace ModUI
 			}			
 		}
 
+		public bool GetValueColor32(string name, out Color32 result)
+		{
+			string section = name;
+
+			iniData.TryGetKey(section + "|" + name + "_Red", out string tempResultR);
+			iniData.TryGetKey(section + "|" + name + "_Green", out string tempResultG);
+			iniData.TryGetKey(section + "|" + name + "_Blue", out string tempResultB);
+			iniData.TryGetKey(section + "|" + name + "_Alpha", out string tempResultA);
+
+			if (tempResultR == "" || tempResultG == "" || tempResultB == "" || tempResultA == "")
+			{
+				MelonLogger.Msg("[" + parentMod.Info.Name + "] Color value [" + name + "] not found or incomplete");
+				result = new Color32(0, 0, 0, 1);
+				return false;
+			}
+			else
+			{
+				result = new Color32(byte.Parse(tempResultR), byte.Parse(tempResultG), byte.Parse(tempResultB), byte.Parse(tempResultA));
+				return true;
+			}
+		}
+
 		public bool GetValueBool(string name, string section, out bool result)
 		{
 			string tempResult;
@@ -316,6 +338,20 @@ namespace ModUI
 		public void SetValueKeyCode(string name, string section, KeyCode value)
 		{
 			SetValueString(name, section, value.ToString());
+		}
+
+		public void SetValueColor32(string name, Color32 color)
+		{
+			string section = name;
+			int colorElementR = color.r;
+			int colorElementG = color.g;
+			int colorElementB = color.b;
+			int colorElementA = color.a;
+
+			SetValueInt(name + "_Red", section, color.r);
+			SetValueInt(name + "_Green", section, color.g);
+			SetValueInt(name + "_Blue", section, color.b);
+			SetValueInt(name + "_Alpha", section, color.a);
 		}
 
 		public void SaveToFile()

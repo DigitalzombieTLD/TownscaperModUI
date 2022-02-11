@@ -16,10 +16,5 @@ namespace ModUI
 			keyValues = (int[])System.Enum.GetValues(typeof(KeyCode));
 			keyCount = new bool[keyValues.Length];			
 		}
-		
-		public static void GetInput()
-		{	
-			
-		}
 	}
 }

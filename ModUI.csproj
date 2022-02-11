@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C179133-7071-45F3-9B0C-93C79B0EC49F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ModUI</RootNamespace>
+    <AssemblyName>ModUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\Il2CppSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\Il2CppSystem.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MelonLoader">
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\MelonLoader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Rewired_Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Json">
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\System.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnhollowerBaseLib">
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnhollowerBaseLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnhollowerRuntimeLib">
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnhollowerRuntimeLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\Unity.TextMeshPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="3rdParty\IL2CPP\Il2CppAssetBundle.cs" />
+    <Compile Include="3rdParty\IL2CPP\Il2CppAssetBundleManager.cs" />
+    <Compile Include="3rdParty\IL2CPP\Il2CppAssetBundleRequest.cs" />
+    <Compile Include="3rdParty\IniFileParser\Exceptions\ParsingException.cs" />
+    <Compile Include="3rdParty\IniFileParser\FileIniParser.cs" />
+    <Compile Include="3rdParty\IniFileParser\Helpers\Assert.cs" />
+    <Compile Include="3rdParty\IniFileParser\Model\Configuration\ConcatenateDuplicatedKeysIniParserConfiguration.cs" />
+    <Compile Include="3rdParty\IniFileParser\Model\Configuration\IniParserConfiguration.cs" />
+    <Compile Include="3rdParty\IniFileParser\Model\Formatting\DefaultIniDataFormatter.cs" />
+    <Compile Include="3rdParty\IniFileParser\Model\Formatting\IIniDataFormatter.cs" />
+    <Compile Include="3rdParty\IniFileParser\Model\IniData.cs" />
+    <Compile Include="3rdParty\IniFileParser\Model\IniDataCaseInsensitive.cs" />
+    <Compile Include="3rdParty\IniFileParser\Model\KeyData.cs" />
+    <Compile Include="3rdParty\IniFileParser\Model\KeyDataCollection.cs" />
+    <Compile Include="3rdParty\IniFileParser\Model\SectionData.cs" />
+    <Compile Include="3rdParty\IniFileParser\Model\SectionDataCollection.cs" />
+    <Compile Include="3rdParty\IniFileParser\Parser\ConcatenateDuplicatedKeysIniDataParser.cs" />
+    <Compile Include="3rdParty\IniFileParser\Parser\IniDataParser.cs" />
+    <Compile Include="3rdParty\IniFileParser\StreamIniDataParser.cs" />
+    <Compile Include="3rdParty\IniFileParser\StringIniParser.cs" />
+    <Compile Include="3rdParty\Tween.cs" />
+    <Compile Include="Components\Keybind.cs" />
+    <Compile Include="Components\InputField.cs" />
+    <Compile Include="Components\DZToggle.cs" />
+    <Compile Include="Components\DZSlider.cs" />
+    <Compile Include="Components\ButtonSmall.cs" />
+    <Compile Include="FileSystem.cs" />
+    <Compile Include="ModSettings.cs" />
+    <Compile Include="UIManager.cs" />
+    <Compile Include="UIAnimation.cs" />
+    <Compile Include="Components\ButtonBig.cs" />
+    <Compile Include="DZInput.cs" />
+    <Compile Include="ModUI.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="3rdParty\IniFileParser\Model\IniData.cs.rej" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

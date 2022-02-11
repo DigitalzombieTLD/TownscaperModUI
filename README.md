@@ -1,7 +1,7 @@
 Townscaper - ModUI Utility mod - v0.8.0 by Digitalzombie
 ===========================================================
 
-https://github.com/DigitalzombieTLD/TownscaperModUI/raw/master/ModUI.JPG
+![Screenshot](https://github.com/DigitalzombieTLD/TownscaperModUI/raw/master/ModUI.JPG)
 
 How to install:
 ===============

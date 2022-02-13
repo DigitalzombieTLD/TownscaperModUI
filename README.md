@@ -83,4 +83,6 @@ Townscaper ModUI is licensed under Apache License, Version 2.0
 Changelog:
 ==========
 0.8.2	- small KeyCode field bugfix
+- graphics and textsizes look better now
+
 0.8.0	- First release

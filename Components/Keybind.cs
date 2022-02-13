@@ -19,7 +19,7 @@ namespace ModUI
 		public RectTransform thisRect;
 		public Action thisAction;
 		public KeyCode thisKeyCode;
-		public static bool waitingForInput;
+		public bool waitingForInput;
 		public ModSettings parentModSetting;
 		public string thisSection;
 

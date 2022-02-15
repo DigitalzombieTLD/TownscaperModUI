@@ -28,6 +28,8 @@ namespace ModUI
 		public static RectTransform mainRect;
 		public static GameObject viewport;
 
+		public static ScrollRect scrollViewRect;
+
 		public static GameObject activePanel;		
 
 		public static Button buttonClose;
@@ -81,12 +83,14 @@ namespace ModUI
 		{
 			currentUI = UnityEngine.Object.Instantiate(ModUIMain.moduiBundle.LoadAsset<GameObject>("ModUI"));
 			UnityEngine.Object.DontDestroyOnLoad(currentUI);
-			//SceneManager.MoveGameObjectToScene(currentUI, SceneManager.GetSceneByName("FlatscreenUi"));			
+			//SceneManager.MoveGameObjectToScene(currentUI, SceneManager.GetSceneByName("FlatscreenUi"));						
 
 			menuGameObject = currentUI.transform.Find("Sidepanel").gameObject;
 			menuRect = menuGameObject.GetComponent<RectTransform>();
 
 			titleField = menuGameObject.transform.Find("Title").gameObject.GetComponent<TextMeshProUGUI>();
+
+			scrollViewRect = menuGameObject.transform.Find("ScrollView").gameObject.GetComponent<ScrollRect>();
 
 			mainPanel = menuGameObject.transform.Find("ScrollView/Viewport/MainPanel").gameObject;
 			mainRect = mainPanel.GetComponent<RectTransform>();

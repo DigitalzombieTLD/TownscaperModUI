@@ -25,11 +25,11 @@ namespace ModUI
 		public string settingsFile;
 		public IniData iniData;
 
-		public static Dictionary<String, GameObject> controlButtons = new Dictionary<String, GameObject>();
-		public static Dictionary<String, GameObject> controlSliders = new Dictionary<String, GameObject>();
-		public static Dictionary<String, GameObject> controlInputFields = new Dictionary<String, GameObject>();
-		public static Dictionary<String, GameObject> controlToggle = new Dictionary<String, GameObject>();
-		public static Dictionary<String, GameObject> controlKeybind = new Dictionary<String, GameObject>();
+		public Dictionary<String, GameObject> controlButtons = new Dictionary<String, GameObject>();
+		public Dictionary<String, GameObject> controlSliders = new Dictionary<String, GameObject>();
+		public Dictionary<String, GameObject> controlInputFields = new Dictionary<String, GameObject>();
+		public Dictionary<String, GameObject> controlToggle = new Dictionary<String, GameObject>();
+		public Dictionary<String, GameObject> controlKeybind = new Dictionary<String, GameObject>();
 
 		bool isOpen = false;
 
@@ -381,12 +381,14 @@ namespace ModUI
 					MelonCoroutines.Start(UIAnimation.PanelFadeIn(subRect));
 					isOpen = true;
 					UIManager.titleField.text = parentMod.Info.Name;
+					UIManager.scrollViewRect.content = subRect;
 				}
 				else
 				{
 					MelonCoroutines.Start(UIAnimation.PanelFadeOut(subRect));
 					isOpen = false;
 					UIManager.titleField.text = "ModUI";
+					UIManager.scrollViewRect.content = UIManager.mainRect;
 				}
 			}
 		}

@@ -12,7 +12,8 @@ namespace ModUI
 	public class DZSlider : MonoBehaviour
 	{
 		public Slider thisSlider;
-		public Image sliderImage;
+		public Image handleImage;
+		public Image backgroundImage;
 		public TextMeshProUGUI textField;
 		public RectTransform thisRect;
 		public Action<float> thisAction;
@@ -32,10 +33,13 @@ namespace ModUI
 			ManualAwake();
 
 			textField.text = label;
-			sliderImage.color = color;
+			handleImage.color = color;
 			thisSlider.minValue = minValue;
 			thisSlider.maxValue = maxValue;
 			thisSlider.wholeNumbers = wholeNumbers;
+
+			backgroundImage = this.gameObject.transform.Find("BackgroundBorder").GetComponent<Image>();
+			backgroundImage.color = color;
 		}
 
 		[method: HideFromIl2Cpp]
@@ -43,7 +47,7 @@ namespace ModUI
 		{
 			thisSlider = GetComponent<Slider>();
 			textField = GetComponentInChildren<TextMeshProUGUI>();
-			sliderImage = thisSlider.image;
+			handleImage = thisSlider.image;
 			thisRect = GetComponent<RectTransform>();
 
 			Quaternion randomRotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-1.5f, 1.5f));

@@ -10,6 +10,8 @@ namespace ModUI
 		public static string settingsPath = Application.dataPath + "/../Mods/_ModSettings";
 		public static bool savingInProgress;
 
+		
+
 		public static void Setup()
 		{
 			if (!System.IO.Directory.Exists(settingsPath))

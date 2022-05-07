@@ -48,7 +48,14 @@ namespace ModUI
 			thisRect.rotation = randomRotation;
 
 			thisInputField.onEndEdit.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(thisAction));
+			thisInputField.onDeselect.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(thisAction));
+			thisInputField.onSubmit.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(thisAction));
+			thisInputField.onValueChanged.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(thisAction));
+
 			thisInputField.onEndEdit.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(new Action<string>(delegate (string value) { UpdateSettingsValue(); })));
+			thisInputField.onDeselect.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(new Action<string>(delegate (string value) { UpdateSettingsValue(); })));
+			thisInputField.onSubmit.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(new Action<string>(delegate (string value) { UpdateSettingsValue(); })));
+			thisInputField.onValueChanged.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(new Action<string>(delegate (string value) { UpdateSettingsValue(); })));
 		}
 
 		[HideFromIl2Cpp]

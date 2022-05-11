@@ -66,13 +66,15 @@ namespace ModUI
 			yield return null;
 		}
 
-		public static IEnumerator PanelFadeIn(RectTransform panelRect)
+		public static IEnumerator PanelFadeIn(RectTransform panelRect, GameObject subPanel)
 		{
 			isAnimatingSub = true;
 			yield return null;
-			panelRect.gameObject.SetActive(true);
-			UIManager.mainPanel.SetActive(false);
 
+
+			
+			UIManager.mainPanel.SetActive(false);
+			
 			Vector2 currentPos = UIManager.sidePanelPositionClosed;
 			Vector2 startPos = UIManager.sidePanelPositionClosed;
 			Vector2 endPos = UIManager.sidePanelPositionOpen;
@@ -86,14 +88,15 @@ namespace ModUI
 			{
 				panelRect.anchoredPosition = endPos;
 				isAnimatingSub = false;
+				subPanel.SetActive(true);
 			};
 
-			panelRect.gameObject.Tween("panelfadein", currentPos, endPos, 0.5f, TweenScaleFunctions.SineEaseInOut, updateMovePos, moveCompleted);
+			panelRect.gameObject.Tween("panelfadein", currentPos, endPos, 0.2f, TweenScaleFunctions.SineEaseInOut, updateMovePos, moveCompleted);
 
 			yield return null;
 		}
 
-		public static IEnumerator PanelFadeOut(RectTransform panelRect)
+		public static IEnumerator PanelFadeOut(RectTransform panelRect, GameObject subPanel)
 		{
 			isAnimatingSub = true;
 			Vector2 currentPos = UIManager.sidePanelPositionOpen;
@@ -109,12 +112,12 @@ namespace ModUI
 			{
 				panelRect.anchoredPosition = endPos;
 				isAnimatingSub = false;
-				panelRect.gameObject.SetActive(false);
+				subPanel.SetActive(false);
 				UIManager.mainPanel.SetActive(true);
 			};
 
 			panelRect.gameObject.Tween("panelfadeout", currentPos, endPos, 0.5f, TweenScaleFunctions.SineEaseInOut, updateMovePos, moveCompleted);
-			
+
 			yield return null;
 		}
 	}

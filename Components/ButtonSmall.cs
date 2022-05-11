@@ -48,10 +48,7 @@ namespace ModUI
 			textField = GetComponentInChildren<TextMeshProUGUI>();
 			buttonImage = thisButton.image;
 			thisRect = GetComponent<RectTransform>();
-
-			Quaternion randomRotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-1.5f, 1.5f));
-			thisRect.rotation = randomRotation;
-
+					
 			thisButton.onClick.AddListener(DelegateSupport.ConvertDelegate<UnityAction>(thisAction));
 		}
 	}

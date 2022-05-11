@@ -41,9 +41,6 @@ namespace ModUI
 			toggleImage = thisToggle.image;
 			thisRect = GetComponent<RectTransform>();
 
-		   Quaternion randomRotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-1.5f, 1.5f));
-			thisRect.rotation = randomRotation;
-
 			thisToggle.onValueChanged.AddListener(DelegateSupport.ConvertDelegate<UnityAction<bool>>(thisAction));
 			thisToggle.onValueChanged.AddListener(DelegateSupport.ConvertDelegate<UnityAction<bool>>(new Action<bool>(delegate (bool value) { UpdateSettingsValue(); })));
 		}

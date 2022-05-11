@@ -43,10 +43,7 @@ namespace ModUI
 			inputfieldImage = thisInputField.image;
 			thisRect = GetComponent<RectTransform>();
 			thisInputField.contentType = thisContentType;
-
-		    Quaternion randomRotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-1.5f, 1.5f));
-			thisRect.rotation = randomRotation;
-
+			
 			thisInputField.onEndEdit.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(thisAction));
 			thisInputField.onDeselect.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(thisAction));
 			thisInputField.onSubmit.AddListener(DelegateSupport.ConvertDelegate<UnityAction<string>>(thisAction));

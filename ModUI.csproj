@@ -101,6 +101,10 @@
       <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>G:\Games\Steam\steamapps\common\Townscaper\MelonLoader\Managed\UnityEngine.PhysicsModule.dll</HintPath>
@@ -134,6 +138,9 @@
     <Compile Include="3rdParty\IniFileParser\StreamIniDataParser.cs" />
     <Compile Include="3rdParty\IniFileParser\StringIniParser.cs" />
     <Compile Include="3rdParty\Tween.cs" />
+    <Compile Include="Components\DZColorSlider.cs" />
+    <Compile Include="Components\PlayerButton.cs" />
+    <Compile Include="Components\NetworkStatus.cs" />
     <Compile Include="Components\Keybind.cs" />
     <Compile Include="Components\InputField.cs" />
     <Compile Include="Components\DZToggle.cs" />

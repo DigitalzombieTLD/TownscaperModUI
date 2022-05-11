@@ -65,7 +65,7 @@ namespace IniParser.Model
         /// </summary>
         public void ClearComments()
         {
-            LeadingComments.Clear();
+            Comments.Clear();
             TrailingComments.Clear();
             Keys.ClearComments();
         }

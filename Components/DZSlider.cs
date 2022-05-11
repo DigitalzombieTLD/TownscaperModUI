@@ -50,9 +50,6 @@ namespace ModUI
 			handleImage = thisSlider.image;
 			thisRect = GetComponent<RectTransform>();
 
-			Quaternion randomRotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-1.5f, 1.5f));
-			thisRect.rotation = randomRotation;
-
 			thisSlider.onValueChanged.AddListener(DelegateSupport.ConvertDelegate<UnityAction<float>>(thisAction));
 			thisSlider.onValueChanged.AddListener(DelegateSupport.ConvertDelegate<UnityAction<float>>(new Action<float>(delegate (float value) { UpdateSettingsValue(); })));						
 		}

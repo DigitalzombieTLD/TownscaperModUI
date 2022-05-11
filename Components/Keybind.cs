@@ -47,11 +47,7 @@ namespace ModUI
 			buttonImage = thisButton.image;
 			thisRect = GetComponent<RectTransform>();
 
-			Quaternion randomRotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-1.5f, 1.5f));
-			thisRect.rotation = randomRotation;
-
 			thisAction = new Action(delegate { GetPressedKey(); });
-
 			thisButton.onClick.AddListener(DelegateSupport.ConvertDelegate<UnityAction>(thisAction));
 		}
 

@@ -19,9 +19,12 @@ namespace ModUI
 			ClassInjector.RegisterTypeInIl2Cpp<ButtonBig>();
 			ClassInjector.RegisterTypeInIl2Cpp<ButtonSmall>();
 			ClassInjector.RegisterTypeInIl2Cpp<DZSlider>();
+			ClassInjector.RegisterTypeInIl2Cpp<DZColorSlider>();
 			ClassInjector.RegisterTypeInIl2Cpp<InputField>();
 			ClassInjector.RegisterTypeInIl2Cpp<DZToggle>();
 			ClassInjector.RegisterTypeInIl2Cpp<Keybind>();
+			ClassInjector.RegisterTypeInIl2Cpp<NetworkStatus>();
+			ClassInjector.RegisterTypeInIl2Cpp<PlayerButton>();
 
 			moduiBundle = Il2CppAssetBundleManager.LoadFromFile("Mods\\ModUI.unity3d");			
 		}

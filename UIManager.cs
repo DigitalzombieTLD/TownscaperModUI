@@ -34,14 +34,13 @@ namespace ModUI
 
 		public static Button buttonClose;
 		public static Button buttonOpen;
-
 	
 		public static TextMeshProUGUI titleField;
 
 		public static Vector3 mainPanelPositionOpen = new Vector3(0, 0, 0);
 		public static Vector3 mainPanelPositionClosed = new Vector3(-180, 0, 0);
 
-		public static Vector2 sidePanelPositionOpen = new Vector2(80, 0);
+		public static Vector2 sidePanelPositionOpen = new Vector2(5, 0);
 		public static Vector2 sidePanelPositionClosed = new Vector2(-180, 0);
 
 		public static void InitializeManager()
@@ -56,11 +55,11 @@ namespace ModUI
 			registeredMods.Add(thisMod, UnityEngine.Object.Instantiate(uiPrefabs["ButtonBig"]));
 			registeredMods[thisMod].transform.parent = mainPanel.transform;
 			ButtonBig newButton = registeredMods[thisMod].AddComponent<ButtonBig>();
-			newButton.Setup(thisMod.Info.Name, thisMod.Info.Author, buttonColor);
-
+				//newButton.Setup(thisMod.Info.Name, thisMod.Info.Author, buttonColor);
+			newButton.Setup(thisMod.Info.Name, buttonColor, new Action(delegate { activeModSettings[thisMod].Toggle(); }));
 			activeModSettings.Add(thisMod, new ModSettings(thisMod));
 			
-			newButton.thisButton.onClick.AddListener(DelegateSupport.ConvertDelegate<UnityAction>(new Action(delegate { activeModSettings[thisMod].Toggle(); })));
+				//newButton.thisButton.onClick.AddListener(DelegateSupport.ConvertDelegate<UnityAction>(new Action(delegate { activeModSettings[thisMod].Toggle(); })));
 
 			MelonLogger.Msg("[" + thisMod.Info.Name + "] Settings initialized!");
 
@@ -77,6 +76,10 @@ namespace ModUI
 			uiPrefabs.Add("Toggle", ModUIMain.moduiBundle.LoadAsset<GameObject>("Toggle"));
 			uiPrefabs.Add("SubPanel", ModUIMain.moduiBundle.LoadAsset<GameObject>("SubPanel"));
 			uiPrefabs.Add("ButtonBack", ModUIMain.moduiBundle.LoadAsset<GameObject>("ButtonBack"));
+			uiPrefabs.Add("NetworkStatus", ModUIMain.moduiBundle.LoadAsset<GameObject>("NetworkStatus"));
+			uiPrefabs.Add("ColorSlider", ModUIMain.moduiBundle.LoadAsset<GameObject>("ColorSlider"));
+			uiPrefabs.Add("SettingsGroup", ModUIMain.moduiBundle.LoadAsset<GameObject>("SettingsGroup"));
+			uiPrefabs.Add("GroupTitle", ModUIMain.moduiBundle.LoadAsset<GameObject>("GroupTitle"));			
 		}
 
 		static void InitializeBaseUI()

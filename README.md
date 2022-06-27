@@ -1,4 +1,4 @@
-Townscaper - ModUI Utility mod - v0.8.4 by Digitalzombie
+Townscaper - ModUI Utility mod - v1.0.0 by Digitalzombie
 ===========================================================
 
 ![Screenshot](https://github.com/DigitalzombieTLD/TownscaperModUI/raw/master/ModUI.jpg)
@@ -22,7 +22,7 @@ https://github.com/LavaGang/MelonLoader/releases/latest/
 
 3. Download the mod (latest release) from: https://github.com/DigitalzombieTLD/TownscaperModUI/releases/latest/
 
-4. Extract the all files from the "TownscaperModUI_Release_0.8.4.zip" into your games Mods folder
+4. Extract the all files from the "TownscaperModUI_Release_1.0.0.zip" into your games Mods folder
 
 5. Start the game! 
 
@@ -82,6 +82,9 @@ Townscaper ModUI is licensed under Apache License, Version 2.0
 
 Changelog:
 ==========
+1.0.0 - graphic elements overhaul
+- new elements
+
 0.8.4 - control dictionaries not static anymore
 
 0.8.2	- small KeyCode field bugfix

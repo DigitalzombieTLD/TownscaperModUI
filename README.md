@@ -1,4 +1,4 @@
-Townscaper - ModUI Utility mod - v1.0.0 by Digitalzombie
+Townscaper - ModUI Utility mod - v1.1.0 by Digitalzombie
 ===========================================================
 
 ![Screenshot](https://github.com/DigitalzombieTLD/TownscaperModUI/raw/master/ModUI.jpg)
@@ -61,6 +61,7 @@ https://www.youtube.com/c/DigitalzombieDev
 
 Thanks to:
 LavaGang for MelonLoader
+MokoJM
 
 ThirdParty  code:
 Il2Cpp Asset Bundle Manager - LavaGang
@@ -82,6 +83,8 @@ Townscaper ModUI is licensed under Apache License, Version 2.0
 
 Changelog:
 ==========
+1.1.0 - new SelectionButton by MokoJM
+
 1.0.0 - graphic elements overhaul
 - new elements
 

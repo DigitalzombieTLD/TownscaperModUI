@@ -39,6 +39,7 @@ namespace ModUI
 		public Dictionary<String, GameObject> controlKeybind = new Dictionary<String, GameObject>();
 		public Dictionary<String, GameObject> networkStatus = new Dictionary<String, GameObject>();
 		public Dictionary<uint, GameObject> playerButtons = new Dictionary<uint, GameObject>();
+		public Dictionary<String, GameObject> controlSelectionButton = new Dictionary<String, GameObject>();
 
 		public Dictionary<String, GameObject> settingGroups = new Dictionary<String, GameObject>();
 
@@ -46,7 +47,7 @@ namespace ModUI
 
 		public ModSettings(MelonMod thisMod)
 		{
-			parentMod = thisMod;			
+			parentMod = thisMod;
 			Setup();
 		}
 
@@ -64,7 +65,7 @@ namespace ModUI
 			groupContainer = subPanel.transform.Find("GroupContainer").gameObject;
 
 			settingGroups.Add("BACKBUTTONGROUP", UnityEngine.Object.Instantiate(UIManager.uiPrefabs["SettingsGroup"]));
-			settingGroups.TryGetValue("BACKBUTTONGROUP", out GameObject backButtonGroup);					
+			settingGroups.TryGetValue("BACKBUTTONGROUP", out GameObject backButtonGroup);
 			backButtonGroup.transform.parent = groupContainer.transform;
 
 			backButtonGameObject = UnityEngine.Object.Instantiate(UIManager.uiPrefabs["ButtonBack"]);
@@ -72,16 +73,16 @@ namespace ModUI
 			backButton = backButtonGameObject.GetComponent<Button>();
 			backButton.onClick.AddListener(DelegateSupport.ConvertDelegate<UnityAction>(new Action(delegate { this.Toggle(); })));
 
-			
+
 			subPanel.SetActive(false);
 
 			OpenOrCreateSettingsFile();
 		}
-		
+
 		public GameObject CheckForAndAddSection(string section)
 		{
 			//settingGroups.TryGetValue(section, out GameObject settingsGroup);
-			
+
 			if (settingGroups.ContainsKey(section))
 			{
 				return settingGroups[section];
@@ -103,7 +104,7 @@ namespace ModUI
 		}
 
 		public void AddButton(string name, string section, Color32 buttonColor, Action newAction)
-		{			
+		{
 			smallButtons.Add(name, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["ButtonSmall"]));
 			smallButtons[name].transform.parent = CheckForAndAddSection(section).transform;
 
@@ -112,7 +113,7 @@ namespace ModUI
 		}
 
 		public void AddPlayerButton(uint playerID, string name, string section, Color32 buttonColor, Action newAction)
-		{	
+		{
 			if (!playerButtons.ContainsKey(playerID))
 			{
 				playerButtons.Add(playerID, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["ButtonSmall"]));
@@ -131,12 +132,12 @@ namespace ModUI
 			{
 				UnityEngine.Object.Destroy(buttonObject);
 				playerButtons.Remove(playerID);
-			}			
+			}
 		}
 
 		public void ClearPlayerButton()
-		{			
-			foreach(KeyValuePair<uint, GameObject> singleButton in playerButtons)
+		{
+			foreach (KeyValuePair<uint, GameObject> singleButton in playerButtons)
 			{
 				UnityEngine.Object.Destroy(singleButton.Value);
 			}
@@ -149,7 +150,7 @@ namespace ModUI
 			networkStatus[name].transform.parent = CheckForAndAddSection(section).transform;
 
 			NetworkStatus newStatus = networkStatus[name].AddComponent<NetworkStatus>();
-			
+
 			newStatus.Setup(name, section, buttonColor);
 
 			return newStatus;
@@ -159,10 +160,10 @@ namespace ModUI
 		{
 			smallButtons.TryGetValue(name, out GameObject buttonObject);
 
-			if (buttonObject!=null)
+			if (buttonObject != null)
 			{
 				UnityEngine.Object.Destroy(buttonObject);
-			}			
+			}
 		}
 
 		public void AddButtonBig(string name, string section, Color32 buttonColor, Action newAction)
@@ -183,7 +184,31 @@ namespace ModUI
 				UnityEngine.Object.Destroy(buttonObject);
 			}
 		}
-		
+
+		//The modder is responsible for changing the "selectValue" attribute of the SelectionButton for the button to be updated or not.
+		public SelectionButton AddSelectionButton(string name, string section, Color32 color, Action newLeftAction, Action newRightAction, string defaultValue)
+		{
+			controlSelectionButton.Add(name, Instantiate(UIManager.uiPrefabs["SelectionButton"]));
+			controlSelectionButton[name].transform.parent = CheckForAndAddSection(section).gameObject.transform;
+
+			bool valueExists = GetValueString(name, section, out string valueResult);
+
+			if (valueExists)
+			{
+				defaultValue = valueResult;
+			}
+			else
+			{
+				SetValueString(name, section, defaultValue);
+			}
+
+			SelectionButton newSelectButton = controlSelectionButton[name].AddComponent<SelectionButton>();
+			newSelectButton.Setup(name, section, color, newLeftAction, newRightAction, defaultValue, this);
+
+			return newSelectButton;
+
+		}
+
 		public void AddSlider(string name, string section, Color32 sliderColor, float minValue, float maxValue, bool wholeNumbers, float defaultValue, Action<float> newAction)
 		{
 			controlSliders.Add(name, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["Slider"]));
@@ -211,31 +236,31 @@ namespace ModUI
 		{
 			controlColorSliders.Add(name, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["ColorSlider"]));
 			controlColorSliders[name].transform.parent = CheckForAndAddSection(section).gameObject.transform;
-			
+
 			DZColorSlider newColorSlider = controlColorSliders[name].AddComponent<DZColorSlider>();
 
 			bool valueExists = GetValueColor(name, out Color valueResult);
 
-			if(valueExists)
+			if (valueExists)
 			{
 				sliderColor = valueResult;
 			}
-			
+
 			newColorSlider.Setup(name, section, sliderColor, minValue, maxValue, newAction, this);
-			
+
 			if (valueExists)
 			{
 				newColorSlider.thisSliderR.value = valueResult.r;
 				newColorSlider.thisSliderG.value = valueResult.g;
-				newColorSlider.thisSliderB.value = valueResult.b;								
+				newColorSlider.thisSliderB.value = valueResult.b;
 			}
 			else
 			{
 				newColorSlider.thisSliderR.value = 0.5f;
 				newColorSlider.thisSliderG.value = 0.5f;
 				newColorSlider.thisSliderB.value = 0.5f;
-								
-				SetValueColor(name, new Color(0.5f,0.5f,0.5f,0.7f));
+
+				SetValueColor(name, new Color(0.5f, 0.5f, 0.5f, 0.7f));
 			}
 			newColorSlider.UpdateSettingsValue();
 			newColorSlider.awoken = true;
@@ -307,7 +332,7 @@ namespace ModUI
 		}
 
 		public void OpenOrCreateSettingsFile()
-		{		
+		{
 			thisIniParser = new FileIniDataParser();
 			settingsFile = FileSystem.settingsPath + "/" + parentMod.Info.Name + ".ini";
 
@@ -330,7 +355,7 @@ namespace ModUI
 				MelonLogger.Msg("[" + parentMod.Info.Name + "] Loading settings file ...");
 				MelonLogger.Msg("[" + settingsFile + "]");
 
-				iniData = thisIniParser.ReadFile(settingsFile);				
+				iniData = thisIniParser.ReadFile(settingsFile);
 			}
 		}
 
@@ -342,7 +367,7 @@ namespace ModUI
 			if (tempResult == "")
 			{
 				result = "";
-				MelonLogger.Msg("[" + parentMod.Info.Name + "] String value [" + name + "] not found in section ["+ section +"]");
+				MelonLogger.Msg("[" + parentMod.Info.Name + "] String value [" + name + "] not found in section [" + section + "]");
 
 				return false;
 			}
@@ -368,7 +393,7 @@ namespace ModUI
 			{
 				result = float.Parse(tempResult);
 				return true;
-			}			
+			}
 		}
 
 		public bool GetValueColor32(string name, out Color32 result)
@@ -437,11 +462,11 @@ namespace ModUI
 		{
 			string tempResult;
 			iniData.TryGetKey(section + "|" + name, out tempResult);
-				
+
 			if (tempResult == "")
 			{
 				MelonLogger.Msg("[" + parentMod.Info.Name + "] KeyCode value [" + name + "] not found in section [" + section + "]");
-				result = KeyCode.None; 
+				result = KeyCode.None;
 				return false;
 			}
 			else
@@ -553,9 +578,9 @@ namespace ModUI
 			if (!iniData.Sections.ContainsSection(section))
 			{
 				MelonLogger.Msg("[" + parentMod.Info.Name + "] Section [" + section + "] not found in settings. Creating ...");
-				iniData.Sections.AddSection(section);				
-			}			
-		}		
+				iniData.Sections.AddSection(section);
+			}
+		}
 
 		public void Toggle()
 		{

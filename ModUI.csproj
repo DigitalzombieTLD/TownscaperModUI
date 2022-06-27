@@ -146,6 +146,7 @@
     <Compile Include="Components\DZToggle.cs" />
     <Compile Include="Components\DZSlider.cs" />
     <Compile Include="Components\ButtonSmall.cs" />
+    <Compile Include="Components\SelectionButton.cs" />
     <Compile Include="FileSystem.cs" />
     <Compile Include="ModSettings.cs" />
     <Compile Include="UIManager.cs" />

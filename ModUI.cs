@@ -6,10 +6,10 @@ using UnityEngine;
 
 namespace ModUI
 {
-    public class ModUIMain : MelonMod
-    {
+	public class ModUIMain : MelonMod
+	{
 		public static Il2CppAssetBundle moduiBundle;
-		
+
 		public override void OnApplicationStart()
 		{
 			FileSystem.Setup();
@@ -25,12 +25,13 @@ namespace ModUI
 			ClassInjector.RegisterTypeInIl2Cpp<Keybind>();
 			ClassInjector.RegisterTypeInIl2Cpp<NetworkStatus>();
 			ClassInjector.RegisterTypeInIl2Cpp<PlayerButton>();
+			ClassInjector.RegisterTypeInIl2Cpp<SelectionButton>();
 
-			moduiBundle = Il2CppAssetBundleManager.LoadFromFile("Mods\\ModUI.unity3d");			
+			moduiBundle = Il2CppAssetBundleManager.LoadFromFile("Mods\\ModUI.unity3d");
 		}
 
 		public override void OnSceneWasLoaded(int buildIndex, string sceneName)
-		{			
+		{
 			if (!UIManager.isInitialized)
 			{
 				TweenFactory.SceneManagerSceneLoaded();

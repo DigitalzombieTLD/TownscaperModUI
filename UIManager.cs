@@ -80,6 +80,7 @@ namespace ModUI
 			uiPrefabs.Add("ColorSlider", ModUIMain.moduiBundle.LoadAsset<GameObject>("ColorSlider"));
 			uiPrefabs.Add("SettingsGroup", ModUIMain.moduiBundle.LoadAsset<GameObject>("SettingsGroup"));
 			uiPrefabs.Add("GroupTitle", ModUIMain.moduiBundle.LoadAsset<GameObject>("GroupTitle"));			
+			uiPrefabs.Add("SelectionButton", ModUIMain.moduiBundle.LoadAsset<GameObject>("SelectionButton"));
 		}
 
 		static void InitializeBaseUI()

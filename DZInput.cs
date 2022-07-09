@@ -9,7 +9,7 @@ namespace ModUI
 		public static int[] keyValues;
 		public static bool[] keyCount;
 
-		public static KeyCode[] keyCodes = System.Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>().Where(k => k < KeyCode.Joystick8Button19).ToArray();
+		public static KeyCode[] keyCodes = System.Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>().Where(k => k < KeyCode.JoystickButton19).ToArray();
 
 		public static void GetAllKeycodes()
 		{

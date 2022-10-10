@@ -17,6 +17,7 @@ namespace ModUI
 
 			ClassInjector.RegisterTypeInIl2Cpp<TweenFactory>();
 			ClassInjector.RegisterTypeInIl2Cpp<ButtonBig>();
+			ClassInjector.RegisterTypeInIl2Cpp<ButtonVeryBig>();
 			ClassInjector.RegisterTypeInIl2Cpp<ButtonSmall>();
 			ClassInjector.RegisterTypeInIl2Cpp<DZSlider>();
 			ClassInjector.RegisterTypeInIl2Cpp<DZColorSlider>();

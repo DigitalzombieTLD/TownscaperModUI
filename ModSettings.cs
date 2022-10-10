@@ -29,6 +29,7 @@ namespace ModUI
 
 		public Dictionary<String, GameObject> smallButtons = new Dictionary<String, GameObject>();
 		public Dictionary<String, GameObject> bigButtons = new Dictionary<String, GameObject>();
+		public Dictionary<String, GameObject> veryBigButtons = new Dictionary<String, GameObject>();
 
 		public GameObject playerPlacementSFXprefab;
 
@@ -173,6 +174,16 @@ namespace ModUI
 
 			ButtonBig newButton = bigButtons[name].AddComponent<ButtonBig>();
 			newButton.Setup(name, section, buttonColor, newAction);
+		}
+
+		public ButtonVeryBig AddButtonVeryBig(string name, string section, Color32 buttonColor, Action newAction)
+		{
+			veryBigButtons.Add(name, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["ButtonVeryBig"]));
+			veryBigButtons[name].transform.parent = CheckForAndAddSection(section).gameObject.transform;
+
+			ButtonVeryBig newButton = veryBigButtons[name].AddComponent<ButtonVeryBig>();			
+
+			return (newButton.Setup(name, section, buttonColor, newAction));
 		}
 
 		public void RemoveButtonBig(string name, string section)

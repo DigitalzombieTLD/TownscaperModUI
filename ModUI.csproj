@@ -138,6 +138,7 @@
     <Compile Include="3rdParty\IniFileParser\StreamIniDataParser.cs" />
     <Compile Include="3rdParty\IniFileParser\StringIniParser.cs" />
     <Compile Include="3rdParty\Tween.cs" />
+    <Compile Include="Components\ButtonVeryBig.cs" />
     <Compile Include="Components\DZColorSlider.cs" />
     <Compile Include="Components\PlayerButton.cs" />
     <Compile Include="Components\NetworkStatus.cs" />

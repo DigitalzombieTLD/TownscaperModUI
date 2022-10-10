@@ -69,6 +69,7 @@ namespace ModUI
 		static void LoadPrefabs()
 		{
 			uiPrefabs.Add("ButtonBig", ModUIMain.moduiBundle.LoadAsset<GameObject>("ButtonBig"));
+			uiPrefabs.Add("ButtonVeryBig", ModUIMain.moduiBundle.LoadAsset<GameObject>("ButtonVeryBig"));
 			uiPrefabs.Add("ButtonKeybind", ModUIMain.moduiBundle.LoadAsset<GameObject>("ButtonKeybind"));
 			uiPrefabs.Add("ButtonSmall", ModUIMain.moduiBundle.LoadAsset<GameObject>("ButtonSmall"));
 			uiPrefabs.Add("Input", ModUIMain.moduiBundle.LoadAsset<GameObject>("Input"));

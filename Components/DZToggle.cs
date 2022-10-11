@@ -18,6 +18,7 @@ namespace ModUI
 		public Action<bool> thisAction;
 		public ModSettings parentModSetting;
 		public string thisSection;
+		public string title;
 
 		public DZToggle(IntPtr intPtr) : base(intPtr) { }
 
@@ -27,6 +28,7 @@ namespace ModUI
 			thisAction = newAction;
 			parentModSetting = thisModSetting;
 			thisSection = section;
+			title = label;
 
 			ManualAwake();
 			toggleImage.color = color;
@@ -48,7 +50,7 @@ namespace ModUI
 		[HideFromIl2Cpp]
 		public void UpdateSettingsValue()
 		{
-			parentModSetting.SetValueBool(textField.text, thisSection, thisToggle.isOn);			
+			parentModSetting.SetValueBool(title, thisSection, thisToggle.isOn);			
 		}
 	}
 }

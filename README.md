@@ -22,7 +22,7 @@ https://github.com/LavaGang/MelonLoader/releases/latest/
 
 3. Download the mod (latest release) from: https://github.com/DigitalzombieTLD/TownscaperModUI/releases/latest/
 
-4. Extract the all files from the "TownscaperModUI_Release_1.2.0.zip" into your games Mods folder
+4. Extract the all files from the "TownscaperModUI_Release_1.3.0.zip" into your games Mods folder
 
 5. Start the game! 
 

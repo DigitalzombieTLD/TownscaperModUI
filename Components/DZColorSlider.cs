@@ -9,7 +9,8 @@ using UnityEngine.UI;
 
 namespace ModUI
 {
-	public class DZColorSlider : MonoBehaviour
+    [RegisterTypeInIl2Cpp]
+    public class DZColorSlider : MonoBehaviour
 	{
 		public Slider thisSliderR;
 		public Slider thisSliderG;

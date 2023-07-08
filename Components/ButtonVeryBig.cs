@@ -10,7 +10,8 @@ using UnityEngine.UI;
 
 namespace ModUI
 {
-	public class ButtonVeryBig : MonoBehaviour
+    [RegisterTypeInIl2Cpp]
+    public class ButtonVeryBig : MonoBehaviour
 	{
 		public Button thisButton;
 		public Image buttonImage;

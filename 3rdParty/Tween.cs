@@ -11,6 +11,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 
+using MelonLoader;
 using System;
 using System.Collections.Generic;
 
@@ -61,6 +62,7 @@ namespace DigitalRuby.Tween
     /// <summary>
     /// Tween manager - do not add directly as a script, instead call the static methods in your other scripts.
     /// </summary>
+    [RegisterTypeInIl2Cpp]
     public class TweenFactory : MonoBehaviour
     {
         public TweenFactory(IntPtr intPtr) : base(intPtr)

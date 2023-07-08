@@ -10,7 +10,8 @@ using UnityEngine.UI;
 
 namespace ModUI
 {
-	public class NetworkStatus : MonoBehaviour
+    [RegisterTypeInIl2Cpp]
+    public class NetworkStatus : MonoBehaviour
 	{
 		public NetworkStatus thisNetworkStatus;
 		public Image thisNetworkStatusBackground;

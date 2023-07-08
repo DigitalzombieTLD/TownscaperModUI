@@ -105,7 +105,7 @@ namespace ModUI
 			buttonClose = menuGameObject.transform.Find("ButtonClose").gameObject.GetComponent<Button>();
 			buttonClose.onClick.AddListener(DelegateSupport.ConvertDelegate<UnityAction>(new Action(delegate { ToggleUI(); })));
 			//buttonClose.onClick.AddListener(DelegateSupport.ConvertDelegate<UnityAction>(new Action(delegate { FileSystem.SaveAllSettingsToFile(); })));
-
+			
 			buttonOpen = menuGameObject.transform.Find("ButtonOpen").gameObject.GetComponent<Button>();
 			buttonOpen.onClick.AddListener(DelegateSupport.ConvertDelegate<UnityAction>(new Action(delegate { ToggleUI(); })));
 

@@ -9,7 +9,8 @@ using UnityEngine.UI;
 
 namespace ModUI
 {
-	public class DZToggle : MonoBehaviour
+    [RegisterTypeInIl2Cpp]
+    public class DZToggle : MonoBehaviour
 	{
 		public Toggle thisToggle;
 		public Image toggleImage;

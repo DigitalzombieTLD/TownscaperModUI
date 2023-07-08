@@ -9,7 +9,8 @@ using UnityEngine.UI;
 
 namespace ModUI
 {
-	public class SelectionButton : MonoBehaviour
+    [RegisterTypeInIl2Cpp]
+    public class SelectionButton : MonoBehaviour
 	{
 		public Button leftArrow;
 		public Button rightArrow;

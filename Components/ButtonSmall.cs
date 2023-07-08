@@ -9,7 +9,8 @@ using UnityEngine.UI;
 
 namespace ModUI
 {
-	public class ButtonSmall : MonoBehaviour
+    [RegisterTypeInIl2Cpp]
+    public class ButtonSmall : MonoBehaviour
 	{
 		public Button thisButton;
 		public Image buttonImage;

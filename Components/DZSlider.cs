@@ -9,7 +9,8 @@ using UnityEngine.UI;
 
 namespace ModUI
 {
-	public class DZSlider : MonoBehaviour
+    [RegisterTypeInIl2Cpp]
+    public class DZSlider : MonoBehaviour
 	{
 		public Slider thisSlider;
 		public Image handleImage;

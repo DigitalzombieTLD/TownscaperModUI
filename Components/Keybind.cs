@@ -10,7 +10,8 @@ using UnityEngine.UI;
 
 namespace ModUI
 {
-	public class Keybind : MonoBehaviour
+    [RegisterTypeInIl2Cpp]
+    public class Keybind : MonoBehaviour
 	{
 		public Button thisButton;
 		public Image buttonImage;

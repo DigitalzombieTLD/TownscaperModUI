@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 namespace ModUI
 {
+	[RegisterTypeInIl2Cpp]
 	public class ButtonBig : MonoBehaviour
 	{
 		public Button thisButton;

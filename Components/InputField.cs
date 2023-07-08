@@ -9,7 +9,8 @@ using UnityEngine.UI;
 
 namespace ModUI
 {
-	public class InputField : MonoBehaviour
+    [RegisterTypeInIl2Cpp]
+    public class InputField : MonoBehaviour
 	{
 		public TMP_InputField thisInputField;
 		public Image inputfieldImage;

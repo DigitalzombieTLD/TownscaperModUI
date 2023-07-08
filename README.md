@@ -1,4 +1,4 @@
-Townscaper - ModUI Utility mod - v1.1.0 by Digitalzombie
+Townscaper - ModUI Utility mod - v1.3.0 by Digitalzombie
 ===========================================================
 
 ![Screenshot](https://github.com/DigitalzombieTLD/TownscaperModUI/raw/master/ModUI.jpg)
@@ -13,7 +13,7 @@ https://github.com/LavaGang/MelonLoader/releases/latest/
 
 2.1. Click "Select" and navigate to your Townscaper folder and select the Townscaper.exe (usually: C:\Program Files(x86)\Steam\steamapps\common\Townscaper\Townscaper.exe)
 
-2.2. Untick the "Latest" checkbox and choose version 0.4.3
+2.2. **Untick the "Latest" checkbox and choose version 0.5.7**
 
 2.3. Click install 
 
@@ -22,7 +22,7 @@ https://github.com/LavaGang/MelonLoader/releases/latest/
 
 3. Download the mod (latest release) from: https://github.com/DigitalzombieTLD/TownscaperModUI/releases/latest/
 
-4. Extract the all files from the "TownscaperModUI_Release_1.0.0.zip" into your games Mods folder
+4. Extract the all files from the "TownscaperModUI_Release_1.2.0.zip" into your games Mods folder
 
 5. Start the game! 
 
@@ -83,6 +83,8 @@ Townscaper ModUI is licensed under Apache License, Version 2.0
 
 Changelog:
 ==========
+1.3.0 - unity.3d file integrated into dll, update for latest game version
+
 1.1.0 - new SelectionButton by MokoJM
 
 1.0.0 - graphic elements overhaul

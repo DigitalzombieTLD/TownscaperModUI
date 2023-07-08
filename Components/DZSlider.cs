@@ -21,6 +21,7 @@ namespace ModUI
 		public ModSettings parentModSetting;
 		public string thisSection;
 		public bool awoken;
+		public string title;
 
 		public DZSlider(IntPtr intPtr) : base(intPtr) { }
 
@@ -34,6 +35,8 @@ namespace ModUI
 			ManualAwake();
 
 			textField.text = label;
+			title = label;
+
 			handleImage.color = color;
 			thisSlider.minValue = minValue;
 			thisSlider.maxValue = maxValue;
@@ -60,7 +63,7 @@ namespace ModUI
 		{
 			if(awoken)
 			{				
-				parentModSetting.SetValueFloat(textField.text, thisSection, thisSlider.value);
+				parentModSetting.SetValueFloat(title, thisSection, thisSlider.value);
 			}						
 		}
 	}

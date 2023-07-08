@@ -23,6 +23,7 @@ namespace ModUI
 		public bool waitingForInput;
 		public ModSettings parentModSetting;
 		public string thisSection;
+		public string title;
 
 		public Keybind(IntPtr intPtr) : base(intPtr) { }
 
@@ -31,6 +32,7 @@ namespace ModUI
 		{
 			parentModSetting = thisModSetting;
 			thisSection = section;
+			title = label;
 			ManualAwake();
 
 			textField.text = label;
@@ -55,7 +57,7 @@ namespace ModUI
 		[HideFromIl2Cpp]
 		public void UpdateSettingsValue()
 		{
-			parentModSetting.SetValueKeyCode(textField.text, thisSection, parentModSetting.ConvertToKeyCode(contentField.text));
+			parentModSetting.SetValueKeyCode(title, thisSection, parentModSetting.ConvertToKeyCode(contentField.text));
 		}
 
 		[HideFromIl2Cpp]

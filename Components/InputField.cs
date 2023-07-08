@@ -20,6 +20,7 @@ namespace ModUI
 		public TMP_InputField.ContentType thisContentType;
 		public ModSettings parentModSetting;
 		public string thisSection;
+		public string title;
 
 		public InputField(IntPtr intPtr) : base(intPtr) { }
 
@@ -30,6 +31,7 @@ namespace ModUI
 			thisContentType = contentType;
 			parentModSetting = thisModSetting;
 			thisSection = section;
+			title = label;
 
 			ManualAwake();
 			inputfieldImage.color = color;
@@ -59,7 +61,7 @@ namespace ModUI
 		[HideFromIl2Cpp]
 		public void UpdateSettingsValue()
 		{
-			parentModSetting.SetValueString(textField.text, thisSection, thisInputField.text);
+			parentModSetting.SetValueString(title, thisSection, thisInputField.text);
 		}
 	}
 }

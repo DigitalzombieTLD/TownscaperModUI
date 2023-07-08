@@ -34,6 +34,7 @@ namespace ModUI
 		public ModSettings parentModSetting;
 		public string thisSection;
 		public bool awoken;
+		public string title;
 
 		public DZColorSlider(IntPtr intPtr) : base(intPtr) { }
 
@@ -43,6 +44,7 @@ namespace ModUI
 			thisAction = newAction;
 			parentModSetting = thisModSetting;
 			thisSection = section;
+			title = label;
 			
 			ManualAwake();
 
@@ -115,7 +117,7 @@ namespace ModUI
 				combinedColor = new Color(colorValueR, colorValueG, colorValueB);
 				backgroundImage.color = combinedColor;
 
-				parentModSetting.SetValueColor(textLabel.text, combinedColor);
+				parentModSetting.SetValueColor(title, combinedColor);
 			}						
 		}
 	}

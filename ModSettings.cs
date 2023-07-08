@@ -104,13 +104,15 @@ namespace ModUI
 			}
 		}
 
-		public void AddButton(string name, string section, Color32 buttonColor, Action newAction)
+		public ButtonSmall AddButton(string name, string section, Color32 buttonColor, Action newAction)
 		{
 			smallButtons.Add(name, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["ButtonSmall"]));
 			smallButtons[name].transform.parent = CheckForAndAddSection(section).transform;
 
 			ButtonSmall newButton = smallButtons[name].AddComponent<ButtonSmall>();
 			newButton.Setup(name, section, buttonColor, newAction);
+
+			return newButton;
 		}
 
 		public void AddPlayerButton(uint playerID, string name, string section, Color32 buttonColor, Action newAction)
@@ -167,13 +169,15 @@ namespace ModUI
 			}
 		}
 
-		public void AddButtonBig(string name, string section, Color32 buttonColor, Action newAction)
+		public ButtonBig AddButtonBig(string name, string section, Color32 buttonColor, Action newAction)
 		{
 			bigButtons.Add(name, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["ButtonBig"]));
 			bigButtons[name].transform.parent = CheckForAndAddSection(section).gameObject.transform;
 
 			ButtonBig newButton = bigButtons[name].AddComponent<ButtonBig>();
 			newButton.Setup(name, section, buttonColor, newAction);
+
+			return newButton;
 		}
 
 		public ButtonVeryBig AddButtonVeryBig(string name, string section, Color32 buttonColor, Action newAction)
@@ -220,7 +224,7 @@ namespace ModUI
 
 		}
 
-		public void AddSlider(string name, string section, Color32 sliderColor, float minValue, float maxValue, bool wholeNumbers, float defaultValue, Action<float> newAction)
+		public DZSlider AddSlider(string name, string section, Color32 sliderColor, float minValue, float maxValue, bool wholeNumbers, float defaultValue, Action<float> newAction)
 		{
 			controlSliders.Add(name, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["Slider"]));
 			controlSliders[name].transform.parent = CheckForAndAddSection(section).gameObject.transform;
@@ -241,9 +245,12 @@ namespace ModUI
 			}
 
 			newSlider.awoken = true;
+
+			return newSlider;
 		}
 
-		public void AddColorSlider(string name, string section, Color sliderColor, float minValue, float maxValue, Action<float> newAction)
+
+		public DZColorSlider AddColorSlider(string name, string section, Color sliderColor, float minValue, float maxValue, Action<float> newAction)
 		{
 			controlColorSliders.Add(name, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["ColorSlider"]));
 			controlColorSliders[name].transform.parent = CheckForAndAddSection(section).gameObject.transform;
@@ -275,9 +282,11 @@ namespace ModUI
 			}
 			newColorSlider.UpdateSettingsValue();
 			newColorSlider.awoken = true;
+
+			return newColorSlider;
 		}
 
-		public void AddInputField(string name, string section, Color32 fieldColor, TMP_InputField.ContentType contentType, string defaultValue, Action<string> newAction)
+		public InputField AddInputField(string name, string section, Color32 fieldColor, TMP_InputField.ContentType contentType, string defaultValue, Action<string> newAction)
 		{
 			controlInputFields.Add(name, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["Input"]));
 			controlInputFields[name].transform.parent = CheckForAndAddSection(section).gameObject.transform;
@@ -296,9 +305,11 @@ namespace ModUI
 				newInputField.thisInputField.text = defaultValue;
 				SetValueString(name, section, defaultValue);
 			}
+
+			return newInputField;
 		}
 
-		public void AddToggle(string name, string section, Color32 toggleColor, bool defaultValue, Action<bool> newAction)
+		public DZToggle AddToggle(string name, string section, Color32 toggleColor, bool defaultValue, Action<bool> newAction)
 		{
 			controlToggle.Add(name, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["Toggle"]));
 			controlToggle[name].transform.parent = CheckForAndAddSection(section).gameObject.transform;
@@ -317,9 +328,11 @@ namespace ModUI
 				newToggleField.thisToggle.isOn = defaultValue;
 				SetValueBool(name, section, defaultValue);
 			}
+
+			return newToggleField;
 		}
 
-		public void AddKeybind(string name, string section, KeyCode defaultValue, Color32 keybindColor)
+		public Keybind AddKeybind(string name, string section, KeyCode defaultValue, Color32 keybindColor)
 		{
 			controlKeybind.Add(name, UnityEngine.Object.Instantiate(UIManager.uiPrefabs["ButtonKeybind"]));
 			controlKeybind[name].transform.parent = CheckForAndAddSection(section).gameObject.transform;
@@ -340,6 +353,8 @@ namespace ModUI
 				newKeybind.contentField.text = defaultValue.ToString();
 				SetValueKeyCode(name, section, defaultValue);
 			}
+
+			return newKeybind;
 		}
 
 		public void OpenOrCreateSettingsFile()
